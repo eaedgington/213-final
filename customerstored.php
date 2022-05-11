@@ -41,7 +41,22 @@
 
       if ($result = mysqli_query($connect, "$sql")){
         while($row = $results->fetch_assoc()){
-          echo "<tr><td>" .$row["cust_id"]. "</td><td>" .$row["g_id"]. "</td><td>" .$row["f_name"]. "</td><td>" .$row["l_name"]. "</td><td>" .$row["dob"]. "</td><td>" .$row["address"]. "</td><td>" .$row["phone"]. "</td></tr>";
+          echo
+          "<tr><td>"
+              .$row["cust_id"].
+          "</td><td>"
+              .$row["g_id"].
+          "</td><td>"
+              .$row["f_name"].
+          "</td><td>"
+              .$row["l_name"].
+          "</td><td>"
+              .$row["dob"].
+          "</td><td>"
+              .$row["address"].
+          "</td><td>"
+              .$row["phone"]. 
+          "</td></tr>";
         }
         echo "</table>";
       }

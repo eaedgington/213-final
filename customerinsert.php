@@ -2,9 +2,17 @@
 $host="localhost";
 $username="root";
 $password="";
-$databasename="art_gallery";
+$databasename="eaedgington_artgallery";
 
-  if (isset($_POST['cust_id']) && isset($_POST['g_id']) && isset($_POST['f_name']) && isset($_POST['l_name']) && isset($_POST['dob']) && isset($_POST['address']) && isset($_POST['phone']) && isset($_POST['art_id']) ):
+  if (isset($_POST['cust_id'])
+  && isset($_POST['g_id'])
+  && isset($_POST['f_name'])
+  && isset($_POST['l_name'])
+  && isset($_POST['dob'])
+  && isset($_POST['address'])
+  && isset($_POST['phone'])
+  && isset($_POST['art_id']) ):
+  
       $cust_id = $_POST['cust_id'];
       $g_id = $_POST['g_id'];
       $f_name = $_POST['f_name'];

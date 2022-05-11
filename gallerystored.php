@@ -30,7 +30,14 @@
       mysqli_query($connect,$sql);
       if ($result = mysqli_query($connect, $sql)){
         while($row = $results->fetch_assoc()){
-          echo "<tr><td>" .$row["g_id"]. "</td><td>" .$row["g_name"]. "</td><td>" .$row["location"]. "</td></tr>";
+          echo
+          "<tr><td>"
+              .$row["g_id"].
+          "</td><td>"
+              .$row["g_name"]. 
+          "</td><td>"
+              .$row["location"].
+          "</td></tr>";
         }
         echo "</table>";
       }

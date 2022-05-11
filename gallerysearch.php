@@ -21,9 +21,9 @@
 
 <?php
 $host="localhost";
-$username="root";
+$username="eaedgington";
 $password="";
-$databasename="art_gallery";
+$databasename="eaedgington_artgallery";
 
   // checking to see if the keywords were provided in the search
   if (isset($_GET['searching']) && $_GET['searching'] != ''){

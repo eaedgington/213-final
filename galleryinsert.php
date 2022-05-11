@@ -1,13 +1,13 @@
 <?php
 $host="localhost";
-$username="root";
+$username="eaedgington";
 $password="";
-$databasename="art_gallery";
+$databasename="eaedgington_artgallery";
 
-  if (isset($_POST['G_ID']) && isset($_POST['G_NAME']) && isset($_POST['LOCATION'])):
-      $g_id = $_POST['G_ID'];
-      $g_name = $_POST['G_NAME'];
-      $location = $_POST['LOCATION'];
+  if (isset($_POST['g_id']) && isset($_POST['g_name']) && isset($_POST['location'])):
+      $g_id = $_POST['g_id'];
+      $g_name = $_POST['g_name'];
+      $location = $_POST['location'];
 
       $connect= mysql_connect($host, $username, $password, $databasename);
 
