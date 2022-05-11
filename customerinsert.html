@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Customer Insert</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+  </head>
+  <body>
+    <div class="bg">
+      <h1>Customer Insert</h1>
+      <nav>
+          <ul>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="artwork.html">Art Work</a></li>
+            <li><a href="customer.html">Customer</a></li>
+          </ul>
+      </nav>
+      <form action="customerinsert.php" method="post">
+        <div class="container">
+          <div class="instructions">
+            <h3>Fill out the form to add to the customer database</h3>
+          </div>
+
+          <label for="cust_id">Customer ID</label>
+          <input type="text" name="custid" placeholder="Enter Customer ID">
+          <br><br>
+          <label for="f_name">First Name</label>
+          <input type="text" name="fname" placeholder="Enter First Name">
+          <br><br>
+          <label for="l_name">Last Name</label>
+          <input type="text" name="lname" placeholder="Enter Last Name">
+          <br><br>
+          <label for="dob">Date of Birth</label>
+          <input type="date" name="dob" placeholder="Enter Date of Birth">
+          <br><br>
+
+          <label for="address">Address</label>
+          <input type="text" name="address" placeholder="Enter Address">
+          <br><br>
+          <label for="phone">Phone Number</label>
+          <input type="tel" name="phone" placeholder="Enter Phone Number">
+          <br><br>
+          <label for="G_ID">Gallery ID</label>
+          <input type="text" name="G_ID" placeholder="Enter Gallery ID">
+          <br><br>
+          <label for="art_id">Artwork ID</label>
+          <input type="text" name="artid" placeholder="Enter Artwork ID">
+          <br><br>
+
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
