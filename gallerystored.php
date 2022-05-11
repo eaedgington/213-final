@@ -17,15 +17,18 @@
     </div>
 
     <?php
-      $host="localhost";
-      $username="root";
-      $password="";
-      $databasename="art_gallery";
+      // $host="localhost";
+      // $username="root";
+      // $password="";
+      // $databasename="eaedgington_artgallery";
 
-      $connect= mysql_connect($host, $username, $password, $databasename);
-      echo "Creating Stored Procedure..."
-
-      if ($result = mysqli_query($connect, "CALL display1()")){
+      $connect= mysqli_connect("localhost", "root", "", "eaedgington_artgallery");
+      if($connect->connect_error){
+        die("Connection Failed: " .$connect->connect_error);
+      }
+      $sql = "SELECT * from gallery";
+      mysqli_query($connect,$sql);
+      if ($result = mysqli_query($connect, $sql)){
         while($row = $results->fetch_assoc()){
           echo "<tr><td>" .$row["g_id"]. "</td><td>" .$row["g_name"]. "</td><td>" .$row["location"]. "</td></tr>";
         }
@@ -34,6 +37,7 @@
       else{
         echo "0 results";
       }
+      $connect->close();
      ?>
   </body>
 </html>
