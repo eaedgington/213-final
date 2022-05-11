@@ -27,15 +27,17 @@
     </div>
 
     <?php
-      $host="localhost";
-      $username="root";
-      $password="";
-      $databasename="art_gallery";
+      // $host="localhost";
+      // $username="root";
+      // $password="";
+      // $databasename="eaedgington_artgallery";
 
-      $connect= mysql_connect($host, $username, $password, $databasename);
-      $sql = "SELECT * from CUSTOMER";
+      $connect= mysqli_connect("localhost", "eaedgington", "", "eaedgington_artgallery");
+      if($connect->connect_error){
+        die("Connection Failed: " .$connect->connect_error);
+      }
+      $sql = "SELECT * from customer";
       mysqli_query($connect,$sql);
-
 
       if ($result = mysqli_query($connect, "$sql")){
         while($row = $results->fetch_assoc()){
@@ -46,6 +48,7 @@
       else{
         echo "0 results";
       }
+      $con->close();
      ?>
   </body>
 </html>
