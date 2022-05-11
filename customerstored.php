@@ -5,8 +5,9 @@
     <title>Customer Storage</title>
   </head>
   <body>
+    <?php require("database.php"); ?>
+    <h1>Customer Database</h1>
     <div class="bg">
-      <h1>Procedure</h1>
       <table>
         <hr>
         <tr>
@@ -24,46 +25,39 @@
           <th>Phone</th>
         </tr>
       </table>
+      <?php
+        $sql =
+          "SELECT f_name, l_name, address, dob
+          from customer
+          JOIN artwork
+          using (art_id)
+          ORDER BY cust_id DESC";
+        $statement = $db->prepare($sql);
+        $statement->execute();
+        $custs = $statement->fetchAll();
+        foreach( $custs as $cust )
+       ?>
+
+       <!-- cust_id,g_id,art_id,f_name,l_name,address,dob -->
+      <div class="customer-body">
+        <tr>
+          <td>
+            <?php echo $cust['f_name']; ?>
+          </td>
+          <td>
+            <?php echo $cust['l_name']; ?>
+          </td>
+          <td>
+            <?php echo $cust['address']; ?>
+          </td>
+          <td>
+            <?php echo $cust['dob']; ?>
+          </td>
+          <td>
+          <?php echo $cust['art_id']; ?>
+      </div>
+      <?php endforeach; ?>
+
     </div>
-
-    <?php
-      // $host="localhost";
-      // $username="root";
-      // $password="";
-      // $databasename="eaedgington_artgallery";
-
-      $connect= mysqli_connect("localhost", "eaedgington", "", "eaedgington_artgallery");
-      if($connect->connect_error){
-        die("Connection Failed: " .$connect->connect_error);
-      }
-      $sql = "SELECT * from customer";
-      mysqli_query($connect,$sql);
-
-      if ($result = mysqli_query($connect, "$sql")){
-        while($row = $results->fetch_assoc()){
-          echo
-          "<tr><td>"
-              .$row["cust_id"].
-          "</td><td>"
-              .$row["g_id"].
-          "</td><td>"
-              .$row["f_name"].
-          "</td><td>"
-              .$row["l_name"].
-          "</td><td>"
-              .$row["dob"].
-          "</td><td>"
-              .$row["address"].
-          "</td><td>"
-              .$row["phone"]. 
-          "</td></tr>";
-        }
-        echo "</table>";
-      }
-      else{
-        echo "0 results";
-      }
-      $con->close();
-     ?>
   </body>
 </html>
